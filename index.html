@@ -34,10 +34,12 @@
         <button type="submit" id="paciente-salvar">Salvar paciente</button>
         <button type="button" id="paciente-cancelar" class="secundario" hidden>Cancelar edição</button>
       </form>
-      <table>
-        <thead><tr><th>Nome</th><th>Idade</th><th>Condições</th><th>Médico</th><th>Ações</th></tr></thead>
-        <tbody id="lista-pacientes"></tbody>
-      </table>
+      <div class="tabela-responsiva">
+        <table>
+          <thead><tr><th>Nome</th><th>Idade</th><th>Condições</th><th>Médico</th><th>Ações</th></tr></thead>
+          <tbody id="lista-pacientes"></tbody>
+        </table>
+      </div>
     </section>
 
     <section id="aba-medicos" class="aba" hidden>
@@ -50,10 +52,12 @@
         <button type="submit" id="medico-salvar">Salvar médico</button>
         <button type="button" id="medico-cancelar" class="secundario" hidden>Cancelar edição</button>
       </form>
-      <table>
-        <thead><tr><th>Nome</th><th>CRM</th><th>Especialidade</th><th>Ações</th></tr></thead>
-        <tbody id="lista-medicos"></tbody>
-      </table>
+      <div class="tabela-responsiva">
+        <table>
+          <thead><tr><th>Nome</th><th>CRM</th><th>Especialidade</th><th>Ações</th></tr></thead>
+          <tbody id="lista-medicos"></tbody>
+        </table>
+      </div>
     </section>
 
     <section id="aba-registros" class="aba" hidden>
@@ -77,10 +81,12 @@
         <button type="submit" id="registro-salvar">Salvar registro</button>
         <button type="button" id="registro-cancelar" class="secundario" hidden>Cancelar edição</button>
       </form>
-      <table>
-        <thead><tr><th>Paciente</th><th>Data</th><th>Local</th><th>Intensidade</th><th>Gatilho</th><th>Ações</th></tr></thead>
-        <tbody id="lista-registros"></tbody>
-      </table>
+      <div class="tabela-responsiva">
+        <table>
+          <thead><tr><th>Paciente</th><th>Data</th><th>Local</th><th>Intensidade</th><th>Gatilho</th><th>Ações</th></tr></thead>
+          <tbody id="lista-registros"></tbody>
+        </table>
+      </div>
     </section>
 
     <section id="aba-relatorios" class="aba" hidden>
@@ -97,10 +103,12 @@
         <button type="button" id="relatorio-limpar" class="secundario">Limpar filtros</button>
       </div>
       <div id="relatorio-resumo" class="resumo"></div>
-      <table>
-        <thead><tr><th>Paciente</th><th>Data</th><th>Local</th><th>Intensidade</th><th>Gatilho</th><th>Sintomas</th></tr></thead>
-        <tbody id="relatorio-tabela"></tbody>
-      </table>
+      <div class="tabela-responsiva">
+        <table>
+          <thead><tr><th>Paciente</th><th>Data</th><th>Local</th><th>Intensidade</th><th>Gatilho</th><th>Sintomas</th></tr></thead>
+          <tbody id="relatorio-tabela"></tbody>
+        </table>
+      </div>
     </section>
   </main>
 
