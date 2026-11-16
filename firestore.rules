@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Este app não tem login (autenticação), então liberamos
+    // leitura e escrita para qualquer um nestas 3 coleções,
+    // que são exatamente as usadas pelo app.
+    // Aviso: isso é aceitável para um trabalho de faculdade/demo,
+    // mas NÃO deve ser usado assim em um app em produção real.
+
+    match /pacientes/{id} {
+      allow read, write: if true;
+    }
+
+    match /medicos/{id} {
+      allow read, write: if true;
+    }
+
+    match /registros/{id} {
+      allow read, write: if true;
+    }
+
+    // Qualquer outra coleção continua bloqueada.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

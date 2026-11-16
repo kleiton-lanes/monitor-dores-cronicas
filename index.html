@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor de Dores Crônicas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Monitor de Dores Crônicas</h1>
+    <p class="subtitulo">Acompanhamento de dores de estômago, cabeça e hipersensibilidade</p>
+  </header>
+
+  <nav class="abas">
+    <button class="aba-botao ativa" data-aba="pacientes">Pacientes</button>
+    <button class="aba-botao" data-aba="medicos">Médicos</button>
+    <button class="aba-botao" data-aba="registros">Registros de Dor</button>
+    <button class="aba-botao" data-aba="relatorios">Relatórios</button>
+  </nav>
+
+  <main>
+    <section id="aba-pacientes" class="aba">
+      <h2>Pacientes</h2>
+      <form id="form-paciente">
+        <input type="hidden" id="paciente-id" />
+        <input type="text" id="paciente-nome" placeholder="Nome" required />
+        <input type="number" id="paciente-idade" placeholder="Idade" min="0" required />
+        <input type="text" id="paciente-condicoes" placeholder="Condições (ex: dor de estômago, hipersensibilidade)" />
+        <select id="paciente-medico">
+          <option value="">Médico responsável (opcional)</option>
+        </select>
+        <textarea id="paciente-observacoes" placeholder="Observações"></textarea>
+        <button type="submit" id="paciente-salvar">Salvar paciente</button>
+        <button type="button" id="paciente-cancelar" class="secundario" hidden>Cancelar edição</button>
+      </form>
+      <table>
+        <thead><tr><th>Nome</th><th>Idade</th><th>Condições</th><th>Médico</th><th>Ações</th></tr></thead>
+        <tbody id="lista-pacientes"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-medicos" class="aba" hidden>
+      <h2>Médicos</h2>
+      <form id="form-medico">
+        <input type="hidden" id="medico-id" />
+        <input type="text" id="medico-nome" placeholder="Nome" required />
+        <input type="text" id="medico-crm" placeholder="CRM" required />
+        <input type="text" id="medico-especialidade" placeholder="Especialidade" />
+        <button type="submit" id="medico-salvar">Salvar médico</button>
+        <button type="button" id="medico-cancelar" class="secundario" hidden>Cancelar edição</button>
+      </form>
+      <table>
+        <thead><tr><th>Nome</th><th>CRM</th><th>Especialidade</th><th>Ações</th></tr></thead>
+        <tbody id="lista-medicos"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-registros" class="aba" hidden>
+      <h2>Registros de Dor</h2>
+      <form id="form-registro">
+        <input type="hidden" id="registro-id" />
+        <select id="registro-paciente" required>
+          <option value="">Selecione o paciente</option>
+        </select>
+        <input type="date" id="registro-data" required />
+        <select id="registro-local" required>
+          <option value="">Local da dor</option>
+          <option value="Estômago">Estômago</option>
+          <option value="Cabeça">Cabeça</option>
+          <option value="Outro">Outro</option>
+        </select>
+        <label for="registro-intensidade">Intensidade (0 a 10): <span id="registro-intensidade-valor">5</span></label>
+        <input type="range" id="registro-intensidade" min="0" max="10" value="5" />
+        <input type="text" id="registro-gatilho" placeholder="Possível gatilho (ex: comida, estresse)" />
+        <input type="text" id="registro-sintomas" placeholder="Sintomas adicionais" />
+        <button type="submit" id="registro-salvar">Salvar registro</button>
+        <button type="button" id="registro-cancelar" class="secundario" hidden>Cancelar edição</button>
+      </form>
+      <table>
+        <thead><tr><th>Paciente</th><th>Data</th><th>Local</th><th>Intensidade</th><th>Gatilho</th><th>Ações</th></tr></thead>
+        <tbody id="lista-registros"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-relatorios" class="aba" hidden>
+      <h2>Relatórios</h2>
+      <div class="filtros">
+        <select id="relatorio-paciente">
+          <option value="">Todos os pacientes</option>
+        </select>
+        <select id="relatorio-medico">
+          <option value="">Todos os médicos</option>
+        </select>
+        <label>De <input type="date" id="relatorio-data-inicio" /></label>
+        <label>Até <input type="date" id="relatorio-data-fim" /></label>
+        <button type="button" id="relatorio-limpar" class="secundario">Limpar filtros</button>
+      </div>
+      <div id="relatorio-resumo" class="resumo"></div>
+      <table>
+        <thead><tr><th>Paciente</th><th>Data</th><th>Local</th><th>Intensidade</th><th>Gatilho</th><th>Sintomas</th></tr></thead>
+        <tbody id="relatorio-tabela"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

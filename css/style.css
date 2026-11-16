@@ -1,0 +1,131 @@
+:root {
+  --cor-primaria: #2b6cb0;
+  --cor-perigo: #c53030;
+  --cor-fundo: #f5f7fa;
+  --cor-texto: #1a202c;
+  --cor-borda: #cbd5e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  margin: 0;
+  padding: 0 1rem 2rem;
+}
+
+header { padding: 1.5rem 0 0.5rem; }
+header h1 { margin: 0; color: var(--cor-primaria); }
+.subtitulo { margin: 0.25rem 0 0; color: #4a5568; }
+
+.abas {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--cor-borda);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.aba-botao {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #4a5568;
+  border-bottom: 3px solid transparent;
+}
+
+.aba-botao.ativa {
+  color: var(--cor-primaria);
+  border-bottom-color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--cor-borda);
+}
+
+form input, form select, form textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+form textarea { width: 100%; min-height: 3rem; }
+
+button {
+  padding: 0.5rem 1rem;
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button.secundario { background: #718096; }
+button.perigo { background: var(--cor-perigo); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+th { background: #edf2f7; }
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--cor-borda);
+}
+
+.filtros select, .filtros input {
+  padding: 0.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.filtros label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.resumo {
+  background: white;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resumo .alerta { color: var(--cor-perigo); font-weight: 600; }
